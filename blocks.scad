@@ -8,7 +8,7 @@ translate([50,0,0]){
     linear_extrude(height=40){
         // hole height is 38
         // going for block height of 35
-        triangle(23);
+        offset(r=3)triangle(17);
     }
 }
 translate([0,50,0]){
