@@ -16,3 +16,12 @@ translate([0,50,0]){
         resize([40,30])circle(d=1000,$fa=1);
     }
 }
+translate([60,50,0]){
+    intersection(){
+        linear_extrude(height=40)
+            circle(d=48,$fa=1);
+        linear_extrude(height=40)
+            translate([-24,0,0])
+                square(48);
+    }
+}
