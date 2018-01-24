@@ -11,3 +11,8 @@ translate([50,0,0]){
         triangle(23);
     }
 }
+translate([0,50,0]){
+    linear_extrude(height=40){
+        resize([40,30])circle(d=100);
+    }
+}
