@@ -2,7 +2,7 @@ use <MCAD/regular_shapes.scad>
 linear_extrude(height=40){
     // hole height is 38
     // going for block height of 35
-    pentagon(19);
+    offset(r=3)pentagon(15);
 }
 translate([50,0,0]){
     linear_extrude(height=40){
