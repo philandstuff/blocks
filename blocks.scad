@@ -13,6 +13,6 @@ translate([50,0,0]){
 }
 translate([0,50,0]){
     linear_extrude(height=40){
-        resize([40,30])circle(d=100);
+        resize([40,30])circle(d=1000,$fa=1);
     }
 }
