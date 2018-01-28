@@ -50,27 +50,62 @@ module rounded_semicircle(radius,offset_radius) {
 }
 
 use <MCAD/regular_shapes.scad>
-linear_extrude(height=40){
-    // hole model
-    // offset(r=5)pentagon(15);
-    offset(r=3.5)pentagon(15);
+
+// pentagon
+difference() {
+    linear_extrude(height=40){
+        // hole model
+        // offset(r=5)pentagon(15);
+        offset(r=3.5)pentagon(15);
+    }
+    linear_extrude(height=38){
+        // hole model
+        // offset(r=5)pentagon(15);
+        offset(r=1.5)pentagon(15);
+    }
 }
+
+// triangle
 translate([50,0,0]){
-    linear_extrude(height=40){
-        // hole model
-        // offset(r=5)triangle(16.5);
-        offset(r=3.5)triangle(16.5);
+    difference() {
+        linear_extrude(height=40){
+            // hole model
+            // offset(r=5)triangle(16.5);
+            offset(r=3.5)triangle(16.5);
+        }
+        linear_extrude(height=38){
+            // hole model
+            // offset(r=5)triangle(16.5);
+            offset(r=1.5)triangle(16.5);
+        }
     }
 }
+
+// ellipse
 translate([0,50,0]){
-    linear_extrude(height=40){
-        resize([40,30])circle(d=1000,$fa=1);
+    difference() {
+        linear_extrude(height=40){
+            resize([40,30])circle(d=1000,$fa=1);
+        }
+        linear_extrude(height=38){
+            resize([36,26])circle(d=1000,$fa=1);
+        }
     }
 }
+
+// semicircle
 translate([55,35,0]){
-    linear_extrude(height=40) {
-        // hole model
-        // rounded_semicircle(26.5,5);
-        rounded_semicircle(25,3.5);
+    difference() {
+        linear_extrude(height=40) {
+            // hole model
+            // rounded_semicircle(26.5,5);
+            rounded_semicircle(25,3.5);
+        }
+        translate([0,2,0])
+        linear_extrude(height=38) {
+            // hole model
+            // rounded_semicircle(26.5,5);
+            rounded_semicircle(21,1.5);
+        }
     }
 }
