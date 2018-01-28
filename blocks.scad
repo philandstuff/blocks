@@ -24,11 +24,11 @@ module rule(s,dir=[1,0,0],c1=[1,0.5,0.5],c2=[0,0,1]) {
        else mirror(d/norm(d)+[1,0,0]) mirror([1,0,0]) children();
 }
 
-translate([35,40,0])
+translate([29,38,0])
 {
 rule(100,dir=[1,0,0]);
 }
-translate([60,34,0])
+translate([55,34,0])
 {
 rule(100,dir=[0,1,0]);
 }
@@ -67,7 +67,10 @@ translate([0,50,0]){
         resize([40,30])circle(d=1000,$fa=1);
     }
 }
-translate([60,40,0]){
-    linear_extrude(height=40)
-        rounded_semicircle(26.5,5);
+translate([55,35,0]){
+    linear_extrude(height=40) {
+        // hole model
+        // rounded_semicircle(26.5,5);
+        rounded_semicircle(25,3.5);
+    }
 }
