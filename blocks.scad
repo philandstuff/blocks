@@ -24,20 +24,20 @@ module rule(s,dir=[1,0,0],c1=[1,0.5,0.5],c2=[0,0,1]) {
        else mirror(d/norm(d)+[1,0,0]) mirror([1,0,0]) children();
 }
 
-translate([29.8,-8,0])
+translate([-18,0,0])
 {
 rule(100,dir=[1,0,0]);
 }
-translate([50,-14.25,0])
+translate([5,-20,0])
 {
 rule(100,dir=[0,1,0]);
 }
 
 use <MCAD/regular_shapes.scad>
 linear_extrude(height=40){
-    // hole height is 38
-    // going for block height of 35
-    offset(r=3)pentagon(15);
+    // hole model
+    // offset(r=5)pentagon(15);
+    offset(r=3.5)pentagon(15);
 }
 translate([50,0,0]){
     linear_extrude(height=40){
