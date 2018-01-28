@@ -24,11 +24,11 @@ module rule(s,dir=[1,0,0],c1=[1,0.5,0.5],c2=[0,0,1]) {
        else mirror(d/norm(d)+[1,0,0]) mirror([1,0,0]) children();
 }
 
-translate([-18,0,0])
+translate([-21,50,0])
 {
 rule(100,dir=[1,0,0]);
 }
-translate([5,-20,0])
+translate([0,34,0])
 {
 rule(100,dir=[0,1,0]);
 }
