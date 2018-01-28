@@ -24,11 +24,11 @@ module rule(s,dir=[1,0,0],c1=[1,0.5,0.5],c2=[0,0,1]) {
        else mirror(d/norm(d)+[1,0,0]) mirror([1,0,0]) children();
 }
 
-translate([-21,50,0])
+translate([35,40,0])
 {
 rule(100,dir=[1,0,0]);
 }
-translate([0,34,0])
+translate([60,34,0])
 {
 rule(100,dir=[0,1,0]);
 }
@@ -37,11 +37,13 @@ module rounded_semicircle(radius,offset_radius) {
     hull() {
         intersection(){
             circle(r=radius,$fa=1);
-            translate([-radius,0,0])
+            translate([-radius,radius*offset_radius/(radius-offset_radius),0])
                 square(2*radius);
         }
+        rotate(-asin(offset_radius/(radius-offset_radius)))
         translate([offset_radius-radius,0,0])
             circle(r=offset_radius);
+        rotate(asin(offset_radius/(radius-offset_radius)))
         translate([radius-offset_radius,0,0])
             circle(r=offset_radius);
     }
@@ -65,7 +67,7 @@ translate([0,50,0]){
         resize([40,30])circle(d=1000,$fa=1);
     }
 }
-translate([60,50,0]){
+translate([60,40,0]){
     linear_extrude(height=40)
-        rounded_semicircle(24,5);
+        rounded_semicircle(26.5,5);
 }
