@@ -24,11 +24,11 @@ module rule(s,dir=[1,0,0],c1=[1,0.5,0.5],c2=[0,0,1]) {
        else mirror(d/norm(d)+[1,0,0]) mirror([1,0,0]) children();
 }
 
-translate([0,-9,0])
+translate([29.8,-8,0])
 {
 rule(100,dir=[1,0,0]);
 }
-translate([50,-13,0])
+translate([50,-14.25,0])
 {
 rule(100,dir=[0,1,0]);
 }
@@ -41,9 +41,9 @@ linear_extrude(height=40){
 }
 translate([50,0,0]){
     linear_extrude(height=40){
-        // hole height is 38
-        // going for block height of 35
-        offset(r=3)triangle(20);
+        // hole model
+        // offset(r=5)triangle(16.5);
+        offset(r=3.5)triangle(16.5);
     }
 }
 translate([0,50,0]){
