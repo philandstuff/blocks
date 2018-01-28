@@ -33,6 +33,20 @@ translate([0,34,0])
 rule(100,dir=[0,1,0]);
 }
 
+module rounded_semicircle(radius,offset_radius) {
+    hull() {
+        intersection(){
+            circle(r=radius,$fa=1);
+            translate([-radius,0,0])
+                square(2*radius);
+        }
+        translate([offset_radius-radius,0,0])
+            circle(r=offset_radius);
+        translate([radius-offset_radius,0,0])
+            circle(r=offset_radius);
+    }
+}
+
 use <MCAD/regular_shapes.scad>
 linear_extrude(height=40){
     // hole model
@@ -52,11 +66,6 @@ translate([0,50,0]){
     }
 }
 translate([60,50,0]){
-    intersection(){
-        linear_extrude(height=40)
-            circle(d=48,$fa=1);
-        linear_extrude(height=40)
-            translate([-24,0,0])
-                square(48);
-    }
+    linear_extrude(height=40)
+        rounded_semicircle(24,5);
 }
